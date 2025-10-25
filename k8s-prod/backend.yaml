@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: noman071/backend:ff0571a78f3948ecd8b9383a55a6fc7a825b9d2f
+          image: noman071/backend:4786e503ff82437bf807e5f9e428f765029a8a15
           ports:
             - containerPort: 5000
           env:
@@ -35,7 +35,6 @@ spec:
                 configMapKeyRef:
                   name: mysql-config
                   key: MYSQL_DATABASE
-
 ---
 # Backend Service
 apiVersion: v1
@@ -50,5 +49,5 @@ spec:
     - port: 5000
       targetPort: 5000
   type: ClusterIP
-
 ---
+
