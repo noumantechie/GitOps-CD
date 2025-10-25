@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: noman071/frontend:4786e503ff82437bf807e5f9e428f765029a8a15
+          image: noman071/frontend:dd1a15216493c150ff6ed56458e6061cbefdd983
           ports:
             - containerPort: 80
 ---
