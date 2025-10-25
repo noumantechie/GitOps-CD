@@ -1,0 +1,38 @@
+# Frontend Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+  namespace: prod
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+        - name: frontend
+          image: noman071/frontend:ff0571a78f3948ecd8b9383a55a6fc7a825b9d2f
+          ports:
+            - containerPort: 80
+
+---
+# Frontend Service (NodePort)
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-svc
+  namespace: prod
+spec:
+  selector:
+    app: frontend
+  ports:
+    - port: 80
+      targetPort: 80
+      nodePort: 32766
+      protocol: TCP
+  type: NodePort
