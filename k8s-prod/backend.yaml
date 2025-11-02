@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: noman071/backend:63b5b1fa59b3114d13796216a3274801477f43fb
+          image: noman071/backend:0898464db9b2f60ccf41e675f33cbbe19dbb1d7d
           ports:
             - containerPort: 5000
           env:
